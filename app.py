@@ -68,7 +68,7 @@ def get_vin_report(vin: str):
     except Exception as e:
         return {"error": str(e)}
 
-# --- Optional: Simple web form for quick manual testing ---
+
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     html = """
@@ -98,3 +98,4 @@ def analyze(request: Request, vin: str = Form(...)):
         """)
     except Exception as e:
         return HTMLResponse(f"<h3>Error:</h3><pre>{str(e)}</pre><a href='/'>Back</a>")
+
